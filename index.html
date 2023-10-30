@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+
+    <title>About Me</title>
+    <style>
+        /* Styles for the About section */
+#home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #15252D;
+    color: white;
+    font-size: 2rem;
+    position: relative;
+    flex-direction: column;
+}
+#nameContainer {
+    pointer-events: none;
+}
+
+#typedName {
+    font-size: clamp(44px, 5vw, 60px); /* Adjust the size responsively */
+    display: inline;
+    text-align: center;
+}
+#typedName, #cursor {
+    display: inline;
+    text-align: center;
+}
+#cursor {
+/* Adjust this value to set the width of the cursor */
+    display: inline-block; /* Necessary to apply width to inline elements */
+    vertical-align: middle; /* This ensures the cursor aligns well with adjacent text */
+    font-size: clamp(44px, 5vw, 60px);
+    margin-top: -35px;
+    color: #2b7a78
+
+
+}
+
+#designation {
+    font-size: clamp(36px, 5vw, 52px);
+    margin: 20px 0; /* Add some space above and below the title */
+    text-align: center; /* Ensures it's centered */
+}
+
+#socialIcons {
+    display: flex; 
+    justify-content: center;
+    gap: 20px;
+}
+
+.icon {
+    font-size: clamp(38px, 5vw, 54px); 
+    transition: color 0.3s;
+}
+
+#socialIcons a {
+    color: white;
+}
+
+#socialIcons a:hover {
+    color: #2b7a78; /* Change the color when hovering over an icon */
+}
+#aboutContent {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally */
+}
+.icon:hover {
+    color: #CFEEF3; /* Change the color when hovering over an icon */
+}
+
+        /* Style for the navigation bar */
+        #navbar {
+            display: flex;
+            justify-content: space-around; /* evenly distribute navbar items */
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #15252D;
+            padding: 10px 0;
+            z-index: 1000;
+            box-shadow: 0px 3px 15px rgba(0,0,0,0.2); /* subtle shadow for depth */
+             opacity: 0; /* Start with navbar hidden */
+            transition: opacity 0.5s; /* Add transition for fade in/out effect */
+        }
+        #navbar a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        #navbar a.active {
+            background-color: #2b7a78;
+            border-radius: 8px; /* rounded corners for active item */
+        }
+        #navbar a:hover {
+            background-color: #555;
+            border-radius: 8px; /* rounded corners on hover */
+        }
+
+        /* Section Styles */
+        .section {
+            display: flex;
+            align-items: center; /* vertically center content */
+            justify-content: center; /* horizontally center content */
+            margin-top: 0px;
+            padding: 60px;
+        }
+        #resume {
+            background-color: #CFEEF3;
+        }
+
+        /* Style for the arrow */
+.arrow {
+    position: absolute;
+    bottom: 20%;  /* Adjusted from 10px to a percentage for more control */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    color: #2b7a78;;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+        opacity: 0; /* hide the arrow initially */
+    transition: opacity 4s; /* transition effect for fade-in */
+    padding-right: -10px;
+}
+
+.blinkingCursor {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 49% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0;
+    }
+}
+#title {
+    font-size: clamp(36px, 5vw, 52px); /* Adjust these values as needed */
+    margin: 20px 0; 
+    text-align: center; 
+}
+        
+
+        /* Smooth scrolling effect */
+        html {
+            scroll-behavior: smooth;
+        }
+        body{
+            font-family: Arial, sans-serif;
+        }
+        html, body {
+  margin: 0;
+  padding: 0;
+        }
+
+        .about-me{
+            height: 100vh;
+            width: 100%;
+            padding: 0px 0;
+            background-color: #CFEEF3 !important;
+            
+        }
+        div#about-me.section{
+            background-color: #DEF2F1;
+        }
+        .pic{
+            height: auto;
+            width: 400px;
+        }
+
+        .about-text{
+            width: 540px;
+            padding-left: 10px;
+        }
+
+        .about{
+            width: 1130px;
+            max-width: 85%;
+            margin: 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+
+        }
+
+        .about-text h2{
+    font-size: 60px; /* Reduced font size for better spacing */
+    font-weight: 600;
+    margin-bottom: -20px;  /* Reduced from 0px to 5px */
+    margin-top: 0; /* Added to remove default margin */
+}
+
+.about-text h5{
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    margin-top: 5px;  /* Reduced from 0 to 5px */
+}
+
+        .about-text p{
+            margin-top: 0;
+            font-size: 18px;
+            line-height: 20px;
+            letter-spacing: 1px;
+        }
+
+        .link{
+            margin-top: 30px;
+        }
+
+        .about-me h2, .about-me h5, .about-me p {
+            padding: 0;
+            color: #15252D
+        }
+
+        .resume-button{
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            background-color: #2b7a78;
+            padding: 8px 25px;
+            border-radius: 8px;
+            border: none;
+
+        }
+
+        #experience {
+            background-color: #F5F5F5;
+            padding: 0px 0;
+            position: relative;
+        }
+        
+        .experience-container {
+            max-width: 1100px;
+            margin: 20px 20px;
+            padding: 10px 10px;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .job {
+            margin-bottom: 40px;
+            position:relative;
+            padding-left: 80px;
+        }
+
+        .job h2 {
+            font-size: 32px;
+            font-weight: normal;
+            margin-bottom: 5px;
+        }
+        .job h3 {
+
+            font-weight: normal;
+        }
+
+        .job h4 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .job p {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .job li{
+            padding: 5px;
+        }
+
+        .job .duration {
+            font-size: 18px;
+            color: #555;
+        }
+        .experience-container h2 {
+    margin-top: 0; /* This removes any default margin at the top */
+    padding: 0;
+}
+.timeline {
+    position: absolute;
+    top: 0;
+    left: -65px; 
+    height: 100%;
+    width: 2px;
+    background: #7E00FC;
+    z-index: -1;
+}
+
+.company-logo {
+    position: absolute;
+    left: 25px; /* Adjust to position logo to the left of the timeline */
+    top: 50%;
+    transform: translateY(-50%); /* This centers the logo vertically relative to each .job container */
+    width: 30px; /* Adjust based on your desired logo size */
+    height: 30px;
+    object-fit: cover;
+    z-index: 2;
+}
+.job::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 32px; /* Adjust as needed */
+    bottom: -30px;
+    width: 2px;
+    background-color: #2b7a78; /* Color of the timeline */
+    z-index: 1; 
+}
+
+.job img {
+    width: 40px;  /* Adjust this to your desired width */
+    height:40px; /* Adjust this to your desired height */
+    position:absolute;
+    transform: translateY(-50%);
+    left: 12px;
+    top: 9px;
+    z-index: 3;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+/* The circle to hold the company logo */
+.job::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0px; /* Adjust as needed */
+    transform: translateY(-50%);
+    width: 60px; /* Adjust based on your preferred circle size */
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff; /* Circle background color */
+    border: 2px solid #2b7a78; /* Circle border color */
+    z-index: 2;
+    top:10px;
+    background-size: cover;
+}
+
+
+div#experience.section{
+            background-color: #FFFFFF;
+            padding-top: 60px
+        }
+        .skills-section {
+    position: relative;
+    width: 100%;
+    perspective: 1000px; /* Adds 3D perspective */
+}
+
+div#projects.section{
+            background-color: #DEF2F1;
+            padding-top: 60px
+        }
+
+.skill-ball {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(ellipse at top, #2e87c9, #3498db 70%, #2a7cb6);
+    color: #fff;
+    font-weight: bold;
+    animation: rotateSkill 10s infinite linear;
+    transform-style: preserve-3d; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
+}
+
+
+
+@keyframes rotateSkill {
+    0% { transform: rotateX(0) rotateY(0); }
+    50% { transform: rotateX(180deg) rotateY(180deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+.skills-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill img {
+    height: 60px;
+    width: auto;
+    max-width: 60%;
+    display: block;
+}
+
+.skill p {
+    text-align: center;
+    margin-top: 10px; /* Adjust top margin for better spacing */
+    margin-bottom: 5px;
+}
+
+.stars {
+    display: none;
+    margin-top: 5px;
+    font-size: 1.2rem;
+    gap: 3px;
+}
+
+.stars span {
+    color: gold;
+}
+
+.skill {
+    position: relative;
+    width: 140px;    /* Increased width */
+    height: 140px;   /* Increased height */
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 15px;   /* Increased padding for better spacing */
+}
+
+.skill:hover {
+    transform: scale(1.15);   /* Adjusted scale value for hover effect */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.skill:hover .stars {
+    display: flex;
+}
+
+.featured-project {
+    display: flex;
+    justify-content: space-between;
+    align-items: start; /* To align the top edges of the description and video */
+    margin-bottom: 0;
+}
+
+.project-description {
+    flex: 1; /* Makes sure the description takes up all available space, pushing the video to the right */
+    padding-right: 20px; /* Additional padding to the right of the text */
+}
+
+.featured-project h3 {
+    font-weight: normal;
+}
+
+.featured-project p {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.featured-project .duration {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Video container styling */
+.video-container {
+    width: 60%; /* Adjust as needed */
+    position: relative;
+    padding-bottom: 25%; /* 16:9 aspect ratio */
+    overflow: visible;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* Other projects styling (side-by-side) */
+.small-projects {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+
+.project {
+    flex: 1;
+    box-sizing: border-box; /* This ensures padding and border are included in width */
+    width: 50%; /* Taking up half the width of the container */
+    padding: 10px; /* Optional: add some padding inside each project card for spacing */
+}
+
+.project h3 {
+    font-weight: normal;
+}
+
+.project p {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.project .duration {
+    font-size: 18px;
+    color: #555;
+}
+
+
+.github-link:hover {
+    color: #4078c0; /* GitHub's blue color, can be changed to any desired hover color */
+}
+
+.github-link i {
+    margin-right: 8px;
+}
+.project-card {
+    width: 600px; /* Fixed width of the card */
+    height: 425px; /* Fixed height of the card */
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+    overflow: hidden; 
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px; /* Fixed height for the image */
+    object-fit: cover; /* Ensures image covers the defined area without distortion */
+    display: block;
+}
+
+.project-content {
+    padding: 15px;
+    flex: 1; /* Ensures content takes up remaining space after the image */
+    display: flex;
+    flex-direction: column;
+}
+
+.github-link {
+    display: inline-block;
+    margin-top: 5px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    align-self: flex-end; /* Aligns the GitHub link to the bottom-right of the card */
+}
+
+.github-link:hover {
+    color: #2b7a78;
+}
+
+.github-link i {
+    margin-right: 8px;
+}
+.project-separator {
+    width: 80%; /* Adjust to desired width */
+    border: 0; /* Removes default border */
+    border-top: 2px solid #2b7a78; /* Sets the top border with a color, adjust color as needed */
+    padding: 20px;
+}
+.project-card h3 {
+    margin-bottom: 0px;  /* Adjust this value as necessary */
+}
+    
+        
+    </style>
+</head>
+
+<body>
+<div id="navbar">
+    <a href="#home" class="active">Home</a>
+    <a href="#about-me">About Me</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+</div>
+
+<div id="home" class="section">
+    <div id="aboutContent">
+<div id="nameContainer">
+    <span id="typedName"></span><span id="cursor">|</span>
+</div>
+        <div id="title">CS + EE @ UVA</div>
+        <div id="socialIcons">
+            <a href="mailto:amagoon757@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/aryanmagoon" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/aryan-magoon/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </div>
+    <a class="arrow" href="#about-me">↓</a>
+</div>
+
+<div id="about-me" class="section">
+    <div class="about">
+        <img src="aryan.jpg" class="pic">
+        <div class="about-text">
+            <h2>About Me</h2>
+            <h5>Software Engineer & Machine Learning Researcher</h5>
+            <p>I am a student studying Computer Science and Electrical Engineering at the University of Virginia. I'm extremely passionate about solving challenging problems in the world of machine learning, MLOps, high performance computing, and distributed systems. I thrive working in fast-paced competitive environments. Outside of academics, I enjoy playing basketball, chess, and poker.</p>
+            <div class="link">
+                <a href="resume.pdf" class="resume-button">Resume</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="experience" class="section">
+    <div class="experience-container">
+        <h2 style="color:#2b7a78">Work Experience</h2>
+        <hr style="color:#2b7a78; margin-bottom: 30px;">
+        <div class="job">
+            <img src="uva.png" alt="Apple" class="company-logo">
+            <h3><strong>University of Virginia</strong>, Undergraduate Teaching Assistant</h3>
+            <p class="duration">JAN 2023 - PRESENT</p>
+            <ul>
+                <li>Reinforcing concepts for 500+ students in Data Structures, Algorithms, Computer Architecture, and Operating Systems</li>
+            </ul>
+        </div>
+        <div class="job">
+            <img src="uva.png" alt="Apple" class="company-logo">
+            <h3><strong>University of Virginia</strong>, Research Intern</h3>
+            <p class="duration">AUG 2023 - PRESENT</p>
+            <ul>
+                <li>Working on efficient training and evaluation frameworks for LLMs</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <img src="apple.png" alt="Apple" class="company-logo">
+            <h3><strong>Apple</strong>, Software Engineer Intern</h3>
+            <p class="duration">MAY 2023 - AUG 2023</p>
+            <ul>
+                <li>Simplified app launch process for billions of devices running iOS and iPadOS by decoupling system components to
+                    provide higher level of synchronization and reducing overall system complexity using Objective-C</li>
+                <li>Optimized application display and interaction by managing the async rendering state of active applications</li>
+                <li>Proved the capability of new infrastructure by developing new procedures not possible before and displaying them</li>
+            </ul>
+        </div>
+        <div class="job">
+            <img src="acturereal.png" alt="Apple" class="company-logo">
+            <h3><strong>Acture</strong>, Research Scientist</h3>
+            <p class="duration">DEC 2021 - AUG 2022</p>
+            <ul>
+                <li>Enabled users to enhance image quality set by user-controlled dynamic scale factor by generating image training
+                    pairs by applying programmatic multi-stage degradation to images</li>
+                <li>Decreased cost of server-side machine learning by 30% by engineering a Flask API to serve the model and
+                    containerizing it using Docker and Kubernetes</li>
+                <li>Increased user retention by 4% by leveraging Django with asynchronous processing and a custom GraphQL schema
+                    with subscriptions that returned finished tasks to the user displayed on the frontend using React</li>
+            </ul>
+        </div>
+        <div class="job">
+            <img src="synfin.png" alt="Apple" class="company-logo">
+            <h3><strong>Synergy</strong>, Software Engineer Intern</h3>
+            <p class="duration">MAY 2022 - SEP 2022</p>
+            <ul>
+                <li>Achieved over 80% code coverage on the app and microservice by writing comprehensive unit tests using Jest</li>
+                <li>Resolved 35 security concerns with software dependencies by refactoring code to reduce vulnerabilities</li>
+                <li>Collaborated with other engineers in a scrum team to reduce vulnerabilities by performing code reviews</li>
+            </ul>
+        </div>
+        <div class="job">
+            <img src="uva.png" alt="Apple" class="company-logo">
+            <h3><strong>University of Virginia</strong>, Research Intern</h3>
+            <p class="duration">MAY 2022 - SEP 2022</p>
+            <ul>
+                <li>Conducted comprehensive experiments to validate the robustness of deep reinforcement learning algorithms against
+                    adversarial attacks, contributing to a 15% improvement in system resiliency under simulated attack scenarios</li>
+                <li>Created an adaptive weighting mechanism to dynamically adjust state importance during reinforcement learning
+                    training, increasing model stability when subjected to adversarial inputs</li>
+                <li>Delivered 7% better efficacy in quantifying importance of the current state, resulting in a lower rate of adversarial
+                    attack success</li>
+            </ul>
+        </div>
+        <h2 style="color:#2b7a78">Education</h2>
+        <hr style="color:#2b7a78; margin-bottom: 30px;">
+        <div class="job">
+            <img src="uva.png" alt="Apple" class="company-logo">
+            <h3><strong>University of Virginia</strong>, BSCS, Minor in EE</h3>
+            <p class="duration">AUG 2020 - MAY 2024</p>
+            <ul>
+                <li>Clubs/Activities: Google Developers Student Club, Machine Learning CLub, Intramural Basketball</li>
+                <li>Relevant Courses: Data Mining(Graduate), Software Engineering, Theory of Computation, Data Structures and Algorithms, Machine Learning(Graduate), Computer Architecture(Graduate), Optimization(Graduate), Natural Language Processing(Graduate), Signal Processing, Computer Networks, Optimization</li>
+            </ul>
+        </div>
+        <h2 style="color:#2b7a78">Skills</h2>
+        <hr style="color:#2b7a78">
+        <div class="skills-section">
+            <div class="skill" data-rating="5">
+                <img src="python.png" alt="Python">
+                <p>Python</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="4">
+                <img src="C.png" alt="Python">
+                <p>C</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="4">
+                <img src="cpp.png" alt="Python">
+                <p>C++</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="2">
+                <img src="java.png" alt="Python">
+                <p>Java</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="3">
+                <img src="html2.png" alt="Python">
+                <p>HTML</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="3">
+                <img src="CSS2.png" alt="Python">
+                <p>CSS</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="3">
+                <img src="javascript.png" alt="Python">
+                <p>Javascript</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="5">
+                <img src="sql.png" alt="Python">
+                <p>SQL/NoSQL</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="4">
+                <img src="bash.png" alt="Python">
+                <p>Bash</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="5">
+                <img src="objectivec.png" alt="Python">
+                <p>Objective-C</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="3">
+                <img src="rust.png" alt="Python">
+                <p>Rust</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="3">
+                <img src="R.png" alt="Python">
+                <p>R</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="3">
+                <img src="react.png" alt="Python">
+                <p>React</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="3">
+                <img src="nodejs.png" alt="Python">
+                <p>Node.js</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="2">
+                <img src="Redux.png" alt="Python">
+                <p>Redux</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="3">
+                <img src="express.png" alt="Python">
+                <p>Express.js</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="4">
+                <img src="flask.png" alt="Python">
+                <p>Flask</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="4">
+                <img src="django.png" alt="Python">
+                <p>Django</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="3">
+                <img src="jquery.png" alt="Python">
+                <p>jQuery</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="5">
+                <img src="bootstrap.png" alt="Python">
+                <p>Bootstrap</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="4">
+                <img src="tensorflow.png" alt="Python">
+                <p>Tensorflow</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="5">
+                <img src="pytorch.png" alt="Python">
+                <p>Pytorch</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="4">
+                <img src="keras.png" alt="Python">
+                <p>Keras</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="5">
+                <img src="numpy.png" alt="Python">
+                <p>NumPy</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="5">
+                <img src="pandas.png" alt="Python">
+                <p>pandas</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="3">
+                <img src="ROS.png" alt="Python">
+                <p>ROS</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="2">
+                <img src="jest.png" alt="Python">
+                <p>Jest</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="2">
+                <img src="CUDA.png" alt="Python">
+                <p>CUDA</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="3">
+                <img src="kafka.png" alt="Python">
+                <p>Apache Kafka</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="2">
+                <img src="flink.png" alt="Python">
+                <p>Apache Flink</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="2">
+                <img src="ksql.png" alt="Python">
+                <p>ksqldb</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="5">
+                <img src="git.png" alt="Python">
+                <p>git</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="4">
+                <img src="graphql.png" alt="Python">
+                <p>GraphQL</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="4">
+                <img src="aws.png" alt="Python">
+                <p>AWS</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="3">
+                <img src="googlecloud.png" alt="Python">
+                <p>GCP</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="4">
+                <img src="kubernetes.png" alt="Python">
+                <p>Kubernetes</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="4">
+                <img src="docker.png" alt="Python">
+                <p>Docker</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="3">
+                <img src="mlflow.png" alt="Python">
+                <p>MLFlow</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <div class="skill" data-rating="4">
+                <img src="airflow.png" alt="Python">
+                <p>Apache Airflow</p>
+                <div class="stars">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+            </div>
+            <!-- Repeat for other skills -->
+        </div>
+
+    </div>
+</div>
+
+<div id="projects" class="section">
+    <div class="experience-container">
+        <h2 style="color:#2b7a78">Projects</h2>
+        <hr style="color:#2b7a78">
+
+        <!-- Featured Project -->
+        <div class="featured-project">
+            <div class="project-description">
+                <h3><strong>Continually Learning Real-Time ML Infrastructure</strong></h3>
+                <p class="duration">MAY 2023 - OCT 2023</p>
+                <p>The convergence of real-time infrastructure and machine learning holds great promise, and this project explores the pivotal role GraphQL plays at this intersection. Delve deep into the intricacies of setting up a robust real-time infrastructure using GraphQL, Apache Kafka, Apache Flink, and ksqlDB and how it complements continual learning in real-time ML systems by allowing us to test in production by leveraging federated GraphQL.</p>
+                <p>Check out my talk on this at <strong style="color: #2b7a78;">GraphQL Summit 2023</strong>.</p>
+            </div>
+            
+            <!-- Placeholder for YouTube video embed -->
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/21pJJ4J86zA?si=D4_j2Xkjfgoy32KS" title="YouTube video player" frameborder="0" style="border: 2px solid #000;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+        <hr class="project-separator">
+        <div class="small-projects">
+            <div class="project-card">
+                <img src="recsys.png" alt="Project 2 Image" class="project-image">
+                <div class="project-content">
+                    <h3><strong>Semi-Online Matrix Factorization RecSys Library</strong></h3>
+                    <p class="duration">DEC 2023 - AUG 2023</p>
+                    <ul>
+                        <li>Semi-online matrix factorization recsys library that allows for semi-online updates allowing to adapt in real-time as new user-item interactions occur in near real-time</li>
+                    </ul>
+                    <a href="https://github.com/aryanmagoon/AniMaxAI" target="_blank" class="github-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        
+            <div class="project-card">
+                <img src="cpu.PNG" alt="Project 3 Image" class="project-image">
+                <div class="project-content">
+                    <h3><strong>RISC-V CPU</strong></h3>
+                    <p class="duration">DEC 2022 - MAY 2023</p>
+                    <ul>
+                        <li>Designed and implemented RISC-V CPU using VHDL</li>
+                        <li>Extensive testing done with VHDL Testbenches, Assembly, and Modelsim</li>
+                    </ul>
+                    <a href="https://github.com/aryanmagoon/cpu" target="_blank" class="github-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- [rest of the code for the other projects remains unchanged] -->
+    </div>
+</div>
+
+
+
+
+
+    <script>
+        // Typing effect
+        const nameToType = "Aryan Magoon";
+        let nameContainer = document.getElementById('typedName');
+        let index = 0;
+
+function typeLetter() {
+    if (index < nameToType.length) {
+        nameContainer.textContent += nameToType.charAt(index);
+        index++;
+
+        setTimeout(typeLetter,150);
+    } else {
+        document.getElementById('cursor').classList.add('blinkingCursor');
+
+        // Fade in the arrow after typing is done
+        const arrow = document.querySelector('.arrow');
+        arrow.style.opacity = '1';
+    }
+}
+        typeLetter();
+
+    // Show/Hide navbar with fade effect
+   /* window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    const aboutBottom = document.getElementById('home').getBoundingClientRect().bottom;
+
+    if (aboutBottom <= navbar.offsetHeight) { // Adjust this condition
+        navbar.style.opacity = '1'; // fade in
+    } else {
+        navbar.style.opacity = '0'; // fade out
+    }
+});*/
+    </script>
+    <script>
+    // Get navbar and section elements
+    const navbar = document.getElementById('navbar');
+    const sections = document.querySelectorAll('.section');
+
+    // Update active section when scrolling
+    window.addEventListener('scroll', updateActiveSection);
+
+    function updateActiveSection() {
+        let currentActive = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - navbar.offsetHeight-150;
+            if (window.scrollY >= sectionTop) {
+                currentActive = section.id;
+            }
+        });
+
+        // Highlight the active navbar link
+        const links = navbar.querySelectorAll('a');
+        links.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').substr(1) === currentActive) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+</script>
+
+<script>
+    let navba = document.getElementById('navbar');
+    let lastScrollPosition = window.pageYOffset;
+    let inactivityTime = 1500;
+    let timeout;
+
+    window.addEventListener('scroll', function() {
+        let currentScrollPosition = window.pageYOffset;
+
+        if (lastScrollPosition != currentScrollPosition) {
+            navba.style.opacity=1;
+        } else {
+            navba.style.opacity=0;
+        }
+        lastScrollPosition = currentScrollPosition;
+
+        clearTimeout(timeout);
+
+        timeout = setTimeout(() => {
+            navba.style.opacity=0;
+        }, inactivityTime);
+    });
+    navba.addEventListener('mouseover', function() {
+        clearTimeout(timeout); // Clear any active timeouts
+        navba.style.opacity = 1; // Show navbar
+    });
+
+    navba.addEventListener('mouseout', function() {
+        timeout = setTimeout(() => {
+            navba.style.opacity = 0;
+        }, inactivityTime);
+    });
+</script>
+
+<script>
+    document.querySelectorAll('.skill').forEach(skill => {
+    const rating = skill.getAttribute('data-rating');
+    const stars = skill.querySelectorAll('.stars span');
+    
+    stars.forEach((star, index) => {
+        if (index < rating) {
+            star.textContent = '★';
+        } else {
+            star.textContent = '☆';
+        }
+    });
+});
+</script>
+</body>
+
+</html>
