@@ -21,7 +21,6 @@
     color: white;
     font-size: 2rem;
     position: relative;
-    flex-direction: column;
 }
 #nameContainer {
     pointer-events: none;
@@ -412,17 +411,6 @@ div#projects.section{
     margin-bottom: 5px;
 }
 
-.stars {
-    display: none;
-    margin-top: 5px;
-    font-size: 1.2rem;
-    gap: 3px;
-}
-
-.stars span {
-    color: gold;
-}
-
 .skill {
     position: relative;
     width: 140px;    /* Increased width */
@@ -434,15 +422,6 @@ div#projects.section{
     align-items: center;
     transition: transform 0.3s, box-shadow 0.3s;
     padding: 15px;   /* Increased padding for better spacing */
-}
-
-.skill:hover {
-    transform: scale(1.15);   /* Adjusted scale value for hover effect */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
-.skill:hover .stars {
-    display: flex;
 }
 
 .featured-project {
@@ -614,7 +593,7 @@ div#projects.section{
         <div class="about-text">
             <h2>About Me</h2>
             <h5>Software Engineer & Machine Learning Researcher</h5>
-            <p>I am a student studying Computer Science and Electrical Engineering at the University of Virginia. I'm extremely passionate about solving challenging problems in the world of machine learning, MLOps, high performance computing, and distributed systems. I thrive working in fast-paced competitive environments. Outside of academics, I enjoy playing basketball, chess, and poker.</p>
+            <p>I am a student studying Computer Science and Electrical Engineering at the University of Virginia. I'm extremely passionate about solving challenging problems in the world of machine learning and MLOps. I thrive working in fast-paced competitive environments. Outside of academics, I enjoy playing basketball and chess.</p>
             <div class="link">
                 <a href="resume.pdf" class="resume-button">Resume</a>
             </div>
@@ -629,7 +608,7 @@ div#projects.section{
         <div class="job">
             <img src="uva.png" alt="Apple" class="company-logo">
             <h3><strong>University of Virginia</strong>, Undergraduate Teaching Assistant</h3>
-            <p class="duration">JAN 2023 - PRESENT</p>
+            <p class="duration">January 2023 - December 2023</p>
             <ul>
                 <li>Reinforcing concepts for 500+ students in Data Structures, Algorithms, Computer Architecture, and Operating Systems</li>
             </ul>
@@ -637,7 +616,7 @@ div#projects.section{
         <div class="job">
             <img src="uva.png" alt="Apple" class="company-logo">
             <h3><strong>University of Virginia</strong>, Research Intern</h3>
-            <p class="duration">AUG 2023 - PRESENT</p>
+            <p class="duration">August 2023 - May 2024</p>
             <ul>
                 <li>Working on efficient training and evaluation frameworks for LLMs</li>
             </ul>
@@ -646,7 +625,7 @@ div#projects.section{
         <div class="job">
             <img src="apple.png" alt="Apple" class="company-logo">
             <h3><strong>Apple</strong>, Software Engineer Intern</h3>
-            <p class="duration">MAY 2023 - AUG 2023</p>
+            <p class="duration">May 2023 - August 2023</p>
             <ul>
                 <li>Simplified app launch process for billions of devices running iOS and iPadOS by decoupling system components to
                     provide higher level of synchronization and reducing overall system complexity using Objective-C</li>
@@ -657,20 +636,18 @@ div#projects.section{
         <div class="job">
             <img src="acturereal.png" alt="Apple" class="company-logo">
             <h3><strong>Acture</strong>, Research Scientist</h3>
-            <p class="duration">DEC 2021 - AUG 2022</p>
+            <p class="duration">December 2021 - August 2023</p>
             <ul>
                 <li>Enabled users to enhance image quality set by user-controlled dynamic scale factor by generating image training
                     pairs by applying programmatic multi-stage degradation to images</li>
-                <li>Decreased cost of server-side machine learning by 30% by engineering a Flask API to serve the model and
-                    containerizing it using Docker and Kubernetes</li>
-                <li>Increased user retention by 4% by leveraging Django with asynchronous processing and a custom GraphQL schema
-                    with subscriptions that returned finished tasks to the user displayed on the frontend using React</li>
+                <li>Decreased inference cost and latency by utilizing tensor algebra to decompose Convolutional blocks to low rank using TensorLy. Used Variational Bayes Matrix Factorization to find optimal rank for each block and implement iterative decomposition/fine-tuning strategy to reduce performance degradation</li>
+                <li>Further decreased inference cost and allow model to run in resource-constrained environments by Quantizing the model to 8-bit while achieving similar performance to full model</li>
             </ul>
         </div>
         <div class="job">
             <img src="synfin.png" alt="Apple" class="company-logo">
             <h3><strong>Synergy</strong>, Software Engineer Intern</h3>
-            <p class="duration">MAY 2022 - SEP 2022</p>
+            <p class="duration">May 2022 - September 2022</p>
             <ul>
                 <li>Achieved over 80% code coverage on the app and microservice by writing comprehensive unit tests using Jest</li>
                 <li>Resolved 35 security concerns with software dependencies by refactoring code to reduce vulnerabilities</li>
@@ -680,7 +657,7 @@ div#projects.section{
         <div class="job">
             <img src="uva.png" alt="Apple" class="company-logo">
             <h3><strong>University of Virginia</strong>, Research Intern</h3>
-            <p class="duration">MAY 2022 - SEP 2022</p>
+            <p class="duration">May 2022 - September 2022</p>
             <ul>
                 <li>Conducted comprehensive experiments to validate the robustness of deep reinforcement learning algorithms against
                     adversarial attacks, contributing to a 15% improvement in system resiliency under simulated attack scenarios</li>
@@ -695,7 +672,7 @@ div#projects.section{
         <div class="job">
             <img src="uva.png" alt="Apple" class="company-logo">
             <h3><strong>University of Virginia</strong>, BSCS, Minor in EE</h3>
-            <p class="duration">AUG 2020 - MAY 2024</p>
+            <p class="duration">August 2020 - May 2024</p>
             <ul>
                 <li>Clubs/Activities: Google Developers Student Club, Machine Learning CLub, Intramural Basketball</li>
                 <li>Relevant Courses: Data Mining(Graduate), Software Engineering, Theory of Computation, Data Structures and Algorithms, Machine Learning(Graduate), Computer Architecture(Graduate), Optimization(Graduate), Natural Language Processing(Graduate), Signal Processing, Computer Networks, Optimization</li>
@@ -707,431 +684,176 @@ div#projects.section{
             <div class="skill" data-rating="5">
                 <img src="python.png" alt="Python">
                 <p>Python</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="4">
                 <img src="C.png" alt="Python">
                 <p>C</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="4">
                 <img src="cpp.png" alt="Python">
                 <p>C++</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="2">
                 <img src="java.png" alt="Python">
                 <p>Java</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="3">
                 <img src="html2.png" alt="Python">
                 <p>HTML</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="3">
                 <img src="CSS2.png" alt="Python">
                 <p>CSS</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="3">
                 <img src="javascript.png" alt="Python">
                 <p>Javascript</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="5">
                 <img src="sql.png" alt="Python">
                 <p>SQL/NoSQL</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
+
             </div>
             <div class="skill" data-rating="4">
                 <img src="bash.png" alt="Python">
                 <p>Bash</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="5">
                 <img src="objectivec.png" alt="Python">
                 <p>Objective-C</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="3">
                 <img src="rust.png" alt="Python">
                 <p>Rust</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="3">
                 <img src="R.png" alt="Python">
                 <p>R</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="3">
                 <img src="react.png" alt="Python">
                 <p>React</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="3">
                 <img src="nodejs.png" alt="Python">
                 <p>Node.js</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="2">
                 <img src="Redux.png" alt="Python">
                 <p>Redux</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="3">
                 <img src="express.png" alt="Python">
                 <p>Express.js</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="4">
                 <img src="flask.png" alt="Python">
                 <p>Flask</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="4">
                 <img src="django.png" alt="Python">
                 <p>Django</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="3">
                 <img src="jquery.png" alt="Python">
                 <p>jQuery</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="5">
                 <img src="bootstrap.png" alt="Python">
                 <p>Bootstrap</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="4">
                 <img src="tensorflow.png" alt="Python">
                 <p>Tensorflow</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="5">
                 <img src="pytorch.png" alt="Python">
                 <p>Pytorch</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="4">
                 <img src="keras.png" alt="Python">
                 <p>Keras</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="5">
                 <img src="numpy.png" alt="Python">
                 <p>NumPy</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="5">
                 <img src="pandas.png" alt="Python">
                 <p>pandas</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="3">
                 <img src="ROS.png" alt="Python">
                 <p>ROS</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="2">
                 <img src="jest.png" alt="Python">
                 <p>Jest</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="2">
                 <img src="CUDA.png" alt="Python">
                 <p>CUDA</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="3">
                 <img src="kafka.png" alt="Python">
                 <p>Apache Kafka</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="2">
                 <img src="flink.png" alt="Python">
                 <p>Apache Flink</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="2">
                 <img src="ksql.png" alt="Python">
                 <p>ksqldb</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="5">
                 <img src="git.png" alt="Python">
                 <p>git</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="4">
                 <img src="graphql.png" alt="Python">
                 <p>GraphQL</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="4">
                 <img src="aws.png" alt="Python">
                 <p>AWS</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="3">
                 <img src="googlecloud.png" alt="Python">
                 <p>GCP</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="4">
                 <img src="kubernetes.png" alt="Python">
                 <p>Kubernetes</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="4">
                 <img src="docker.png" alt="Python">
                 <p>Docker</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="3">
                 <img src="mlflow.png" alt="Python">
                 <p>MLFlow</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
             </div>
             <div class="skill" data-rating="4">
                 <img src="airflow.png" alt="Python">
                 <p>Apache Airflow</p>
-                <div class="stars">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>☆</span>
-                    <span>☆</span>
-                </div>
+
+            </div>
+            <div class="skill" data-rating="2">
+                <img src="tltorch.png" alt="Python">
+                <p>TensorLy</p>
+            </div>
+            <div class="skill" data-rating="4">
+                <img src="huggingface.png" alt="Python">
+                <p>Transformers</p>
+            </div>
+            <div class="skill" data-rating="4">
+                <img src="JAX.png" alt="Python">
+                <p>JAX</p>
+            </div>
+            <div class="skill" data-rating="4">
+                <img src="flax.png" alt="Python">
+                <p>Flax</p>
             </div>
             <!-- Repeat for other skills -->
         </div>
